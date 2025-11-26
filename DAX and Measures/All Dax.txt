@@ -1,0 +1,304 @@
+Columns Dax:
+Ve_type = IF(CONTAINSSTRING(uber_data[Vehicle Type],"Bike"),"Bike",uber_data[Vehicle Type])
+
+Time Slot Short = 
+VAR tm = Uber_Data[Time Slot]
+RETURN
+SWITCH(
+    TRUE(),
+    tm = "12 AM - 03 AM", 1,
+    tm = "03 AM - 06 AM", 2,
+    tm = "06 AM - 09 AM", 3,
+    tm = "09 AM - 12 PM", 4,
+    tm = "12 PM - 03 PM", 5,
+    tm = "03 PM - 06 PM", 6,
+    tm = "06 PM - 09 PM", 7,
+    tm = "09 PM - 12 AM", 8,
+    BLANK()
+)
+
+
+Time Slot = 
+VAR _hour = HOUR(Uber_Data[Time])
+RETURN
+SWITCH(
+    TRUE(),
+    _hour >= 0 && _hour < 3 , "12 AM - 03 AM",
+    _hour >= 3 && _hour < 6 , "03 AM - 06 AM",
+    _hour >= 6 && _hour < 9 , "06 AM - 09 AM",
+    _hour >= 9 && _hour < 12 , "09 AM - 12 PM",
+    _hour >= 12 && _hour < 15 , "12 PM - 03 PM",
+    _hour >= 15 && _hour < 18 , "03 PM - 06 PM",
+    _hour >= 18 && _hour < 21 , "06 PM - 09 PM",
+    _hour >= 21 && _hour < 24 , "09 PM - 12 AM",
+    "Unknown"
+)
+
+Rounded_Rating = 
+VAR RatingValue = VALUE(Uber_Data[Customer Rating])
+RETURN
+IF(
+    ISBLANK(RatingValue),
+    BLANK(),
+    ROUND(RatingValue, 0)
+)
+
+Incomplete_Reason_Display = 
+ Uber_Data[Incomplete Rides Reason]
+
+Driver_Reason_Display = 
+Uber_Data[Driver Cancellation Reason]
+or 
+Driver_Reason_Display =
+IF(
+    ISBLANK(Uber_Data[Driver Related Reason]),
+    BLANK(),
+    Uber_Data[Driver Related Reason]
+)
+
+
+Customer_Reason_Display = 
+Uber_Data[Reason for cancelling by Customer]
+
+
+
+Parameter tables:
+
+Date Axis = {
+    ("Month", NAMEOF('Calender'[Month]), 0),
+    ("Quarter", NAMEOF('Calender'[Quarter]), 1)
+}
+
+Customer_Unique = 
+SUMMARIZE(
+    Uber_Data,
+    Uber_Data[Customer ID],
+    "RideCount", COUNTROWS(Uber_Data)
+)
+
+
+Cancel rides Display = {
+    ("Customer", NAMEOF('Uber_Data'[Customer_Reason_Display]), 0),
+    ("Driver", NAMEOF('Uber_Data'[Driver_Reason_Display]), 1),
+    ("Incomplete", NAMEOF('Uber_Data'[Incomplete_Reason_Display]), 2)
+}
+
+
+Cancel Rides = {
+    ("Incomplete", NAMEOF('Uber_Data'[Incomplete Rides Reason]), 0),
+    ("Customer", NAMEOF('Uber_Data'[Reason for cancelling by Customer]), 1),
+    ("Driver", NAMEOF('Uber_Data'[Driver Cancellation Reason]), 2)
+}
+
+Cancel Ride = {
+    ("Driver", NAMEOF('Uber_Data'[Driver Cancellation Reason]), 0),
+    ("Incomplete", NAMEOF('Uber_Data'[Incomplete Rides Reason]), 1),
+    ("Customer", NAMEOF('Uber_Data'[Reason for cancelling by Customer]), 2)
+}
+
+Calender = SUMMARIZE(Uber_Data,Uber_Data[Date])
+
+
+
+Dax Measures:
+
+Avg of Customer Rating = AVERAGE(Uber_Data[Customer Rating])
+
+Avg_Distance = AVERAGE(Uber_Data[Ride Distance])
+
+Booking Completion % = 
+DIVIDE([Completed_Booking], [Total Booking], 0)
+
+
+Booking Progress HTML = 
+VAR PercentValue = DIVIDE([completed_Booking], [Total Booking], 0) * 100
+VAR Dash = FORMAT(PercentValue, "0.0") & ", 100"
+
+VAR Part1 =
+    "<div style='width:150px;height:150px;position:relative;'>
+       <svg viewBox='0 0 36 36' style='transform: rotate(-90deg);'>"
+
+VAR Part2 =
+    "<path d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831'
+           fill='none' stroke='#e6e6e6' stroke-width='2' />"
+
+VAR Part3 =
+    "<path d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831'
+           fill='none' stroke='#9b6ef3' stroke-width='2'
+           stroke-dasharray='" & Dash & "'
+           stroke-linecap='round' />"
+
+VAR Part4 =
+    "</svg>
+     <div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-family:Segoe UI;color:#000;'>"
+     & FORMAT(PercentValue, "0") & "%</div></div>"
+
+RETURN
+Part1 & Part2 & Part3 & Part4
+
+
+
+Booking_count = DISTINCTCOUNT(Uber_Data[Booking ID])
+
+
+Booking_remove_status_filter = CALCULATE([Booking_count],ALL(Uber_Data[Booking Status]))
+
+Cancel Bookings = COUNTROWS(FILTER('Uber_Data','Uber_Data'[Booking Status]<>"completed" && 'Uber_Data'[Booking Status]<>"Incomplete"))
+
+
+Cancel_Rides_NoBlank = 
+VAR SelectedField =
+    SELECTEDVALUE('Cancel Rides'[Cancel Rides Fields])
+
+VAR Result =
+    SWITCH(
+        TRUE(),
+        SelectedField = "Uber_Data[Incomplete Rides Reason]",
+            CALCULATE(
+                [Total Booking],
+                FILTER(
+                    ALL('Uber_Data'),
+                    NOT(ISBLANK('Uber_Data'[Incomplete Rides Reason]))
+                )
+            ),
+        SelectedField = "Uber_Data[Reason for cancelling by Customer]",
+            CALCULATE(
+                [Total Booking],
+                FILTER(
+                    ALL('Uber_Data'),
+                    NOT(ISBLANK('Uber_Data'[Reason for cancelling by Customer]))
+                )
+            ),
+        SelectedField = "Uber_Data[Driver Cancellation Reason]",
+            CALCULATE(
+                [Total Booking],
+                FILTER(
+                    ALL('Uber_Data'),
+                    NOT(ISBLANK('Uber_Data'[Driver Cancellation Reason]))
+                )
+            )
+    )
+RETURN
+    Result
+
+
+
+Cancelled_Booking = 
+CALCULATE(
+    [Booking_count],
+    Uber_Data[Booking Status] IN {"Cancelled by Driver", "Cancelled by Customer"}
+)
+
+
+
+completed_Booking = CALCULATE([Booking_count],Uber_Data[Booking Status]="Completed")
+
+
+Cont% = var vehicle_remove_filter=CALCULATE([Revenue],ALL(Uber_Data[Ve_type]))
+VAR revenue=[Revenue]
+RETURN DIVIDE(revenue,vehicle_remove_filter)
+
+
+Customer_count = DISTINCTCOUNT(Uber_Data[Customer ID])
+
+First_Time = 
+VAR CustomerRideCount =
+  SUMMARIZE(
+    Uber_data,
+    Uber_data[Customer ID],
+    "RideCount", COUNTROWS(Uber_data)
+  )
+RETURN
+COUNTROWS(
+  FILTER(CustomerRideCount, [RideCount] = 1)
+)
+
+
+Formatted Revenue = 
+VAR val = [Revenue]  -- replace with your actual revenue measure or column
+RETURN
+SWITCH(
+    TRUE(),
+    val >= 1000000000, "$" & FORMAT(val / 1000000000, "0.0") & "B",
+    val >= 1000000,    "$" & FORMAT(val / 1000000, "0.0") & "M",
+    val >= 1000,       "$" & FORMAT(val / 1000, "0.0") & "K",
+    "$" & FORMAT(val, "0")
+)
+
+
+
+Incomplete_Booking = 
+CALCULATE(
+    [Booking_count],
+    Uber_Data[Booking Status] IN {"Incomplete", "No Driver Found"}
+)
+
+
+Lost_Booking = CALCULATE([Booking_count],Uber_Data[Booking Status]<>"Completed")
+
+
+Regular_Rider = 
+COUNTROWS(
+    FILTER(
+        SUMMARIZE(
+            Uber_Data,
+            Uber_Data[Customer ID],
+            "Count", COUNT(Uber_Data[Customer ID])
+        ),
+        [Count] >= 3
+    )
+)
+
+
+
+Return_Rider = 
+VAR CustomerRideCount =
+    ADDCOLUMNS(
+        SUMMARIZE(Uber_Data, Uber_Data[Customer ID]),
+        "RideCount", CALCULATE(COUNT(Uber_Data[Customer ID]))
+    )
+RETURN
+COUNTROWS(
+    FILTER(CustomerRideCount, [RideCount] = 2)
+)
+
+
+
+Revenue = SUM(Uber_Data[Booking Value])
+
+
+RideCount_per_Customer = COUNTROWS(Uber_Data)
+
+
+
+Total Booking = DISTINCTCOUNT(Uber_Data[Booking ID])
+
+
+Total Customers = DISTINCTCOUNT(Uber_Data[Customer ID])
+
+
+Total Vehicles = DISTINCTCOUNT('Uber_Data'[Vehicle Type])
+
+
+total_booking = DISTINCTCOUNT(Uber_Data[Booking ID])
+
+
+Total_Booking_All = 
+CALCULATE(
+    [Total Booking],
+    ALL(Uber_Data)
+)
+
+
+Total_Customers_All = 
+CALCULATE(
+    [Total Customers],
+    ALL(Uber_Data)
+)
+
+
+
+Total_Distance = SUM(Uber_Data[Ride Distance])
+
+
+Total_Revenue = SUM(Uber_Data[Booking Value])
