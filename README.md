@@ -93,17 +93,23 @@ It highlights key metrics like revenue, ride trends, cancellation patterns, cust
 - Driver rating lower than customer rating → service consistency issue
 
 ## 🌐 7. Dashboard Preview
+
 #### Overview Page
-https://drive.google.com/file/d/11kpb-TfPsHT5G83y6MjTx6EKGKTxv8sw/view?usp=sharing
+<img width="1154" height="650" alt="overview" src="https://github.com/user-attachments/assets/ea381dec-5979-4739-9349-6fa632962d04" />
+
 #### Revenue Page
-https://drive.google.com/file/d/1xMrC9uHvnVMUvkWrtTzmkoxS8MoWsoea/view?usp=sharing
-https://github.com/newnaveendhawan/Uber-Ride-Revenue-Customer-Insights-Power-BI-Dashboard/blob/main/Images/revenue.png 
+<img width="1150" height="662" alt="revenue" src="https://github.com/user-attachments/assets/0eeda830-aa08-4d26-bb2c-75cd4c9e399b" />
+
 #### Vehicles Page
-[vehicles.png](https://drive.google.com/file/d/1cgIHCcc499ViiPSsE5Ci_AlKXiFSntph/view?usp=drive_link)
+<img width="1151" height="649" alt="vehicle" src="https://github.com/user-attachments/assets/0973e67e-505c-476d-b131-88bc913a6192" />
+
 #### Customers Page
-[customers.png](https://drive.google.com/file/d/15Lm1VFpVXKqVhEQJz0lBEQ5DCV45WC5w/view?usp=drive_link)
+<img width="1157" height="652" alt="customers" src="https://github.com/user-attachments/assets/fe94f1f7-cb20-4f0e-bdaa-efb4d5641692" />
+
 #### Rides Page
-[rides.png](https://drive.google.com/file/d/1FuYb-Nus9HURD1Ckx0gmPVTjeWsh5XGH/view?usp=drive_link)
+<img width="1157" height="657" alt="ride" src="https://github.com/user-attachments/assets/bbf82d9b-8714-4631-ad28-bc05766a1151" />
+
+
 
 ## 📌 8. How to Use
 
