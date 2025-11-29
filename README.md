@@ -8,16 +8,16 @@ Full Power BI Dashboard (PBIX file) will be uploaded soon...
 ## 📚 Table of Contents
 - [🧭 1. Overview](#-1-overview)
 - [🎯 2. Objective](#-2-objective)
-- [📦 3. Dataset Summary](#3-dataset-summary)
-- [🧠 4. Built With](#4-built-with)
-- [📊 5. Dashboard Pages](#5-dashboard-pages)
-- [💡 6. Key Insights](#6-key-insights)
-- [🌐 7. Dashboard Preview](#7-dashboard-preview)
-- [📌 8. How to Use](#8-how-to-use)
-- [📥 9. Data Source](#9-data-source)
-- [📃 10. License](#10-license)
-- [🧑‍💻 11. About the Author](#11-about-the-author)
-- [📬 12. Contact](#12-contact)
+- [📦 3. Dataset Summary](#-3-dataset-summary)
+- [🧠 4. Built With](#-4-built-with)
+- [📊 5. Dashboard Pages](#-5-dashboard-pages)
+- [💡 6. Key Insights](#-6-key-insights)
+- [🌐 7. Dashboard Preview](#-7-dashboard-preview)
+- [📌 8. How to Use](#-8-how-to-use)
+- [📥 9. Data Source](#-9-data-source)
+- [📃 10. License](#-10-license)
+- [🧑‍💻 11. About the Author](#-11-about-the-author)
+- [📬 12. Contact](#-12-contact)
 
 ---
 
