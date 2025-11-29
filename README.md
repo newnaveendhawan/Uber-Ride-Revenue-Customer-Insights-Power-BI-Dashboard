@@ -4,8 +4,23 @@
 
 Full Power BI Dashboard (PBIX file) will be uploaded soon...
 ---
+
 ## 🧭 1. Overview
 
 This dashboard transforms raw ride logs into actionable insights for operations, customer experience, and business strategy.
 It highlights key metrics like revenue, ride trends, cancellation patterns, customer loyalty, and vehicle performance.
+
+## 🎯 2. Objective
+
+- Monitor overall ride performance
+
+* Identify high-demand routes
+
+🚀 Understand customer behavior & loyalty
+
+Track cancellation reasons and revenue loss
+
+Measure driver performance
+
+Improve operational and strategic decision-making
 
