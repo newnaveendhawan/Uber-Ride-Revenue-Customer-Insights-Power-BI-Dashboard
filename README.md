@@ -95,12 +95,11 @@ It highlights key metrics like revenue, ride trends, cancellation patterns, cust
 ## 🌐 7. Dashboard Preview
 
 images/
- ├── overview.png
- ├── revenue.png
- ├── customers.png
- ├── vehicles.png
- ├── cancellation.png
- └── locations.png
+ ├── [overview.png](https://drive.google.com/file/d/11kpb-TfPsHT5G83y6MjTx6EKGKTxv8sw/view?usp=sharing)
+ ├── [revenue.png](https://drive.google.com/file/d/1xMrC9uHvnVMUvkWrtTzmkoxS8MoWsoea/view?usp=sharing)
+ ├── [vehicles.png](https://drive.google.com/file/d/1cgIHCcc499ViiPSsE5Ci_AlKXiFSntph/view?usp=drive_link)
+ ├── [customers.png](https://drive.google.com/file/d/15Lm1VFpVXKqVhEQJz0lBEQ5DCV45WC5w/view?usp=drive_link)
+ └── [rides.png](https://drive.google.com/file/d/1FuYb-Nus9HURD1Ckx0gmPVTjeWsh5XGH/view?usp=drive_link)
 
 ## 📌 8. How to Use
 
