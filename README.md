@@ -16,7 +16,7 @@ Full Power BI Dashboard (PBIX file) will be uploaded soon...
 - [📌 8. How to Use](#-8-how-to-use)
 - [📥 9. Data Source](#-9-data-source)
 - [📃 10. License](#-10-license)
-- [🧑‍💻 11. About the Author](#-11-about-the-author)
+- [🧑‍💻 11. About the Author](#11-about-the-author)
 - [📬 12. Contact](#-12-contact)
 
 ---
