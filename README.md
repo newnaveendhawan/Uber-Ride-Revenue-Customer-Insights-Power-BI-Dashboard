@@ -5,6 +5,22 @@
 Full Power BI Dashboard (PBIX file) will be uploaded soon...
 ---
 
+## 📚 Table of Contents
+- [🧭 1. Overview](#1-overview)
+- [🎯 2. Objective](#2-objective)
+- [📦 3. Dataset Summary](#3-dataset-summary)
+- [🧠 4. Built With](#4-built-with)
+- [📊 5. Dashboard Pages](#5-dashboard-pages)
+- [💡 6. Key Insights](#6-key-insights)
+- [🌐 7. Dashboard Preview](#7-dashboard-preview)
+- [📌 8. How to Use](#8-how-to-use)
+- [📥 9. Data Source](#9-data-source)
+- [📃 10. License](#10-license)
+- [🧑‍💻 11. About the Author](#11-about-the-author)
+- [📬 12. Contact](#12-contact)
+
+---
+
 ## 🧭 1. Overview
 
 This dashboard transforms raw ride logs into actionable insights for operations, customer experience, and business strategy.
@@ -98,14 +114,30 @@ images/
 
 5. Use navigation buttons for smooth movement
 
-## 📃 9. License
+## 📥 9. Data Source
+> You can download Dashboard from the [Google Drive](https://drive.google.com/file/d/1r73yuzk1zJJa4Eo_bGimlnoWNb6HRxVR/view?usp=drive_link)   
+> Original Dataset of this project [click here](https://github.com/newnaveendhawan/Uber-Ride-Revenue-Customer-Insights-Power-BI-Dashboard/blob/main/Dataset/uber.xlsx)
 
-- This project is released under the MIT License.
+> Full Notion Document of this project [click here](https://morning-cast-4fb.notion.site/Uber-Ride-Revenue-Customer-Insights-Power-BI-Dashboard-2b0c0db6457880fe8973f5cf5884e077?pvs=74)
+
+---
+
+## 📃 10. License
+
+- This project is released under the [MIT License](https://github.com/newnaveendhawan/Uber-Ride-Revenue-Customer-Insights-Power-BI-Dashboard/blob/main/LICENSE).
 - Feel free to fork, use, modify, or contribute.
+---
 
-## 🏁 12. Author
-- Naveen Dhawan
-- Data Analyst | Power BI | Python | SQL
-- (LinkedIn)[https://www.linkedin.com/in/newnaveendhawan/]
+## 🧑‍💻 11. About the Author
+### Naveen Dhawan
+###### 🎓 BTech – NIT Warangal | Data Analyst | ML Enthusiast | Power BI & Python
+---
+
+## 📬 12. Contact
+
+For questions, improvements, or collaborations:  
+- 📧 newnaveendhawan@gmail.com
+- [💼 LinkedIn](https://www.linkedin.com/in/newnaveendhawan/) 
+- [📁 Portfolio](https://naveendhawanportfolio.blogspot.com/) 
 
 
