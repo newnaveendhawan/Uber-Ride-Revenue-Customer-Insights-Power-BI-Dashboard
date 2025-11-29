@@ -93,13 +93,16 @@ It highlights key metrics like revenue, ride trends, cancellation patterns, cust
 - Driver rating lower than customer rating → service consistency issue
 
 ## 🌐 7. Dashboard Preview
-
-images/
- ├── [overview.png](https://drive.google.com/file/d/11kpb-TfPsHT5G83y6MjTx6EKGKTxv8sw/view?usp=sharing)
- ├── [revenue.png](https://drive.google.com/file/d/1xMrC9uHvnVMUvkWrtTzmkoxS8MoWsoea/view?usp=sharing)
- ├── [vehicles.png](https://drive.google.com/file/d/1cgIHCcc499ViiPSsE5Ci_AlKXiFSntph/view?usp=drive_link)
- ├── [customers.png](https://drive.google.com/file/d/15Lm1VFpVXKqVhEQJz0lBEQ5DCV45WC5w/view?usp=drive_link)
- └── [rides.png](https://drive.google.com/file/d/1FuYb-Nus9HURD1Ckx0gmPVTjeWsh5XGH/view?usp=drive_link)
+#### Overview Page
+[overview.png](https://drive.google.com/file/d/11kpb-TfPsHT5G83y6MjTx6EKGKTxv8sw/view?usp=sharing)
+#### Revenue Page
+[revenue.png](https://drive.google.com/file/d/1xMrC9uHvnVMUvkWrtTzmkoxS8MoWsoea/view?usp=sharing)
+#### Vehicles Page
+[vehicles.png](https://drive.google.com/file/d/1cgIHCcc499ViiPSsE5Ci_AlKXiFSntph/view?usp=drive_link)
+#### Customers Page
+[customers.png](https://drive.google.com/file/d/15Lm1VFpVXKqVhEQJz0lBEQ5DCV45WC5w/view?usp=drive_link)
+#### Rides Page
+[rides.png](https://drive.google.com/file/d/1FuYb-Nus9HURD1Ckx0gmPVTjeWsh5XGH/view?usp=drive_link)
 
 ## 📌 8. How to Use
 
