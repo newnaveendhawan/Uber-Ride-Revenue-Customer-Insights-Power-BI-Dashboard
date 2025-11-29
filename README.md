@@ -128,7 +128,6 @@ images/
 - Feel free to fork, use, modify, or contribute.
 ---
 
-## 🧑‍💻 11. About the Author
 <h2 id="11-about-the-author">🧑‍💻 11. About the Author</h2>
 
 ### Naveen Dhawan
