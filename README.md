@@ -24,3 +24,12 @@ It highlights key metrics like revenue, ride trends, cancellation patterns, cust
 
 * Improve operational and strategic decision-making
 
+## 📦 3. Dataset Summary
+
+- 148,767 ride records
+
+- Columns include: Customer ID, Booking Status, Ratings, Locations, Distance, Vehicle Type, Payment Method, Revenue, Timestamps
+
+- DAX Measures: Total Booking, Completed Booking, Lost Booking, Revenue, Rider Frequency, Total Distance, Cancellation Segments
+
+- Python Visuals: Custom radial slicer, correlation matrix
