@@ -12,15 +12,15 @@ It highlights key metrics like revenue, ride trends, cancellation patterns, cust
 
 ## 🎯 2. Objective
 
-- Monitor overall ride performance
+* Monitor overall ride performance
 
 * Identify high-demand routes
 
-🚀 Understand customer behavior & loyalty
+* Understand customer behaviour & loyalty
 
-Track cancellation reasons and revenue loss
+* Track cancellation reasons and revenue loss
 
-Measure driver performance
+* Measure driver performance
 
-Improve operational and strategic decision-making
+* Improve operational and strategic decision-making
 
