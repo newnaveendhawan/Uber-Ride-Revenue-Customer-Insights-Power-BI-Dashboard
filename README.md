@@ -94,9 +94,10 @@ It highlights key metrics like revenue, ride trends, cancellation patterns, cust
 
 ## 🌐 7. Dashboard Preview
 #### Overview Page
-[overview.png](https://drive.google.com/file/d/11kpb-TfPsHT5G83y6MjTx6EKGKTxv8sw/view?usp=sharing)
+https://drive.google.com/file/d/11kpb-TfPsHT5G83y6MjTx6EKGKTxv8sw/view?usp=sharing
 #### Revenue Page
-[revenue.png](https://drive.google.com/file/d/1xMrC9uHvnVMUvkWrtTzmkoxS8MoWsoea/view?usp=sharing)
+https://drive.google.com/file/d/1xMrC9uHvnVMUvkWrtTzmkoxS8MoWsoea/view?usp=sharing
+https://github.com/newnaveendhawan/Uber-Ride-Revenue-Customer-Insights-Power-BI-Dashboard/blob/main/Images/revenue.png 
 #### Vehicles Page
 [vehicles.png](https://drive.google.com/file/d/1cgIHCcc499ViiPSsE5Ci_AlKXiFSntph/view?usp=drive_link)
 #### Customers Page
