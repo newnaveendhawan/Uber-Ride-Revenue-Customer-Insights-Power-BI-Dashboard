@@ -129,6 +129,7 @@ images/
 ---
 
 ## 🧑‍💻 11. About the Author
+
 ### Naveen Dhawan
 ###### 🎓 BTech – NIT Warangal | Data Analyst | ML Enthusiast | Power BI & Python
 ---
