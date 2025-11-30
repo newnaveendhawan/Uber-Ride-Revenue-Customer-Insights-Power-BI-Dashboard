@@ -1,8 +1,8 @@
 # 🚖 Uber Ride, Revenue & Customer Insights Dashboard - Power BI
 
 #### A complete end-to-end analytics dashboard built using Power BI, DAX, Python, and advanced UI/UX to analyse ride behaviour, customer trends, revenue performance, and cancellation insights from 148K+ Uber ride records.
-<img width="6000" height="3375" alt="UBER cover" src="https://github.com/user-attachments/assets/50613120-8a0d-4dc2-a5f5-c31a6f8d4178" />
 
+<img width="3120" height="1755" alt="UBER cover (1)" src="https://github.com/user-attachments/assets/988b33c3-4371-4296-8682-232dd5c0ffaa" />
 
 
 ##### Power BI Dashboard (PBIX) uploaded — download from the links below.
